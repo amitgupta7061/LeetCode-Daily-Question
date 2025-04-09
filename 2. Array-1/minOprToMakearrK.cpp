@@ -31,6 +31,15 @@ public:
     }
 };
 
+class Solution {
+public:
+    int minOperations(vector<int>& nums, int k) {
+        int minVal = *min_element(nums.begin(), nums.end());
+        if(minVal < k) return -1;
+        unordered_set<int> cnt(nums.begin(), nums.end());
+        return minVal == k? cnt.size() - 1 : cnt.size(); 
+    }
+};
 int main(){
 
 }
